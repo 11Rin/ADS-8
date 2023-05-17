@@ -5,13 +5,12 @@
 class Train {
  private:
   struct Cage {
-    Cage():light(false), next(nullptr), prev(nullptr) {}
     bool light; // состояние лампочки
     Cage *next;
     Cage *prev;
   };
   int countOp; // счетчик шагов (число переходов из вагона в вагон)
-  int cnt = 1;
+  int cnt = 1, len = 0;
   Cage *last;
   Cage *first; // точка входа в поезд (первый вагон)
  public:
