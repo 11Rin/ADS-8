@@ -13,8 +13,8 @@ void Train::addCage(bool light) {
     last->next = newVag;
     last = newVag;
   } else {
-      Cage* first;
       first = new Cage;
+      first->light = light;
       first->next = nullptr;
       first->prev = nullptr;
       last = first;
@@ -33,8 +33,8 @@ int Train::getLength() {
       countOp++;
       vl = vl->next;
     } else {
-        if (vl->light = true) {
-          vl->light = false;
+        if (vl->light) {
+          vl->light = 0;
           countOp++;
         }
         for (int i = cnt; i > 0; i--) {
